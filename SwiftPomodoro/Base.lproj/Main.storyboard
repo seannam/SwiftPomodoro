@@ -66,6 +66,7 @@
                     <connections>
                         <outlet property="minutesLabel" destination="oH7-xd-GEs" id="7OC-ge-yEA"/>
                         <outlet property="secondsLabel" destination="Czd-8a-4s0" id="2qd-QW-KXe"/>
+                        <outlet property="startButton" destination="8tU-hN-Szg" id="m5S-cR-ky7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

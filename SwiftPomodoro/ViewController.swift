@@ -11,7 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet var secondsLabel: UILabel!
     @IBOutlet var minutesLabel: UILabel!
-    
+    @IBOutlet var startButton: UIButton!
+
     var minutes = 02
     var seconds = 05;
     var timer = Timer();
@@ -22,11 +23,11 @@ class ViewController: UIViewController {
     @IBAction func buttonPressed(sender: UIButton) {
         
         if(timerIsOn == false) { // false means off, true means on
-            sender.setTitle("PAUSE", for: .normal);
+            //sender.setTitle("PAUSE", for: .normal);
             startTimer()
         }
         else {
-            sender.setTitle("START", for: .normal);
+            //sender.setTitle("START", for: .normal);
             stopTimer()
         }
     }
@@ -37,11 +38,11 @@ class ViewController: UIViewController {
             minutes = 01;
             seconds = 02;
     
-            updateLabels(minutes, seconds)
+            updateLabels(minutes: minutes, seconds: seconds)
         }
     }
     
-    func updateLabels(minutes:int, seconds:int) {
+    func updateLabels(minutes: Int, seconds: Int) {
         minutesLabel.text = String(format: "%02d", minutes);
         secondsLabel.text = String(format: "%02d", seconds);
     }
@@ -61,16 +62,18 @@ class ViewController: UIViewController {
             seconds = 00;
             stopTimer()
         }
-        updateLabels(minutes, seconds)
+        updateLabels(minutes: minutes, seconds: seconds)
     }
 
     func startTimer() {
+        startButton.setTitle("PAUSE", for: .normal);
         // timeInterval - per sec, selector - function to call
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.updateTimer), userInfo: nil, repeats: true);
         timerIsOn = true;
     }
     
     func stopTimer() {
+        startButton.setTitle("START", for: .normal);
         timer.invalidate()
         timerIsOn = false
     }
