@@ -11,16 +11,27 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet var secondsLabel: UILabel!
     @IBOutlet var minutesLabel: UILabel!
+    @IBOutlet var colonLabel: UILabel!
+    @IBOutlet var msgLabel: UILabel!
+    
     @IBOutlet var startButton: UIButton!
 
-    var minutes = 02
-    var seconds = 05;
+    var minutes = 25;
+    var seconds = 00;
     var timer = Timer();
     var timerIsOn = false;
     
+    var doneMessage = "DONE!";
     
-    
-    @IBAction func buttonPressed(sender: UIButton) {
+    @IBAction func buttonPressed(sender: UIButton) { // start button
+        if(msgLabel.text == doneMessage) {
+            msgLabel.text = "";
+            colonLabel.text = ":";
+            
+            minutes = 25;
+            seconds = 00;
+            updateLabels(minutes: minutes, seconds: seconds)
+        }
         
         if(timerIsOn == false) { // false means off, true means on
             //sender.setTitle("PAUSE", for: .normal);
@@ -35,8 +46,8 @@ class ViewController: UIViewController {
         
         stopTimer()
         if(timerIsOn == false) {
-            minutes = 01;
-            seconds = 02;
+            minutes = 25;
+            seconds = 00;
     
             updateLabels(minutes: minutes, seconds: seconds)
         }
@@ -56,13 +67,19 @@ class ViewController: UIViewController {
             minutes -= 1;
             seconds = 59;
         }
+        updateLabels(minutes: minutes, seconds: seconds)
         
         if ( minutes == 0 && seconds == 0) {
             minutes = 00;
             seconds = 00;
             stopTimer()
+            
+            colonLabel.text = "";
+            minutesLabel.text = "";
+            secondsLabel.text = "";
+            msgLabel.text = doneMessage;
         }
-        updateLabels(minutes: minutes, seconds: seconds)
+        
     }
 
     func startTimer() {

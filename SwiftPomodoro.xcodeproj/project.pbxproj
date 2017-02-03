@@ -96,6 +96,7 @@
 				TargetAttributes = {
 					B50B00DB1E29F4650064F62E = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = S5484LL42G;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -258,7 +259,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = S5484LL42G;
 				INFOPLIST_FILE = SwiftPomodoro/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.seannam.SwiftPomodoro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -270,7 +273,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = S5484LL42G;
 				INFOPLIST_FILE = SwiftPomodoro/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.seannam.SwiftPomodoro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -297,6 +302,7 @@
 				B50B00F01E29F4650064F62E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
